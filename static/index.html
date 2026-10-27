@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ne">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Matrix Vision</title>
+  <meta name="description" content="प्रेस्क्रिप्सन, ल्याब रिपोर्ट वा एक्सरे सजिलो नेपालीमा बुझ्नुहोस्। Explain a prescription, lab report or X-ray in simple Nepali.">
+  <meta name="theme-color" content="#FBF7F1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%23D6B08A'/%3E%3Ccircle cx='12' cy='12' r='4' fill='%23FBF7F1'/%3E%3C/svg%3E">
+  <link rel="preload" href="/static/fonts/Mukta-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#/" aria-label="Matrix Vision"><span class="brand-dot" aria-hidden="true"></span><span id="brandName">Matrix Vision</span></a>
+    <div class="top-actions">
+      <button id="langBtn" class="link-btn" type="button">English</button>
+      <button id="loginBtn" class="pill-btn" type="button" hidden>लगइन</button>
+      <button id="logoutBtn" class="link-btn" type="button" hidden>लगआउट</button>
+    </div>
+  </header>
+
+  <main id="view" tabindex="-1"></main>
+
+  <dialog id="loginSheet" class="sheet" aria-labelledby="loginTitle">
+    <h2 id="loginTitle"></h2>
+    <p id="loginWhy" class="muted"></p>
+    <button id="googleBtn" class="primary-btn wide" type="button"><span id="googleLabel"></span></button>
+    <div id="devLogin" hidden>
+      <label for="devName" id="devNameLabel"></label>
+      <input id="devName" class="input" autocomplete="name" maxlength="40">
+      <button id="devGo" class="primary-btn wide" type="button"></button>
+      <p id="devNote" class="muted small"></p>
+    </div>
+    <p id="loginError" class="error" role="alert" hidden></p>
+    <button id="loginCancel" class="text-btn wide" type="button"></button>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="/static/i18n.js"></script>
+  <script src="/static/wav-recorder.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+/* Same look as Matrix: Mukta, coffee-and-milk palette, one latte accent. Small and fast on cheap phones. */
+@font-face { font-family: Mukta; src: url("/static/fonts/Mukta-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: Mukta; src: url("/static/fonts/Mukta-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+
+:root {
+  --ink: #3E2A1E;
+  --ink-2: #5C4332;
+  --muted: #7A6555;
+  --line: #E8DDD0;
+  --control: #8F7662;
+  --soft: #F2EADF;
+  --bg: #FBF7F1;
+  --card: #FFFDF9;
+  --marigold: #D6B08A;
+  --star: #8E5F24;
+  --danger: #C4281C;
+  --danger-soft: #FBEDEB;
+  --ok: #1F7A4D;
+  --ok-soft: #E6F3EC;
+  --warn: #8A5A00;
+  --warn-soft: #FFF5DC;
+  --focus-region: #1565C0;
+  --r: 12px;
+  --r-lg: 18px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font-family: Mukta, "Noto Sans Devanagari", system-ui, sans-serif; font-size: 18px; line-height: 1.65; color: var(--ink); background: var(--bg); }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+a { color: var(--ink); }
+:focus-visible { outline: 3px solid var(--star); outline-offset: 2px; }
+[hidden] { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+svg { width: 24px; height: 24px; fill: currentColor; flex: none; }
+.muted { color: var(--muted); }
+.small { font-size: 15px; }
+.center { text-align: center; }
+.error { color: var(--danger); font-weight: 700; }
+h1 { font-size: 28px; line-height: 1.3; margin: 20px 0 8px; }
+h2 { font-size: 20px; line-height: 1.35; margin: 0 0 8px; }
+
+/* ---------- header ---------- */
+.top { position: sticky; top: 0; z-index: 5; background: rgba(251,247,241,.96); border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 16px; padding-top: max(10px, env(safe-area-inset-top)); }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 20px; white-space: nowrap; }
+.brand-dot { width: 22px; height: 22px; border-radius: 50%; background: radial-gradient(circle, var(--bg) 0 30%, var(--marigold) 31%); }
+.top-actions { display: flex; align-items: center; gap: 6px; }
+.link-btn { background: none; border: none; padding: 8px 10px; color: var(--ink-2); min-height: 44px; }
+.pill-btn { background: var(--ink); color: #fff; border: none; border-radius: 999px; padding: 6px 18px; min-height: 44px; font-weight: 700; }
+
+main { max-width: 640px; margin: 0 auto; padding: 0 16px 48px; }
+main:focus, main:focus-visible { outline: none; }
+
+/* ---------- buttons and fields ---------- */
+.primary-btn { background: var(--ink); color: #fff; border: none; border-radius: var(--r); padding: 12px 20px; font-weight: 700; min-height: 52px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; }
+.primary-btn:disabled { opacity: .45; cursor: default; }
+.primary-btn.big { min-height: 64px; font-size: 20px; }
+.secondary-btn { background: var(--bg); color: var(--ink); border: 1.5px solid var(--ink); border-radius: var(--r); padding: 10px 18px; font-weight: 700; min-height: 52px;
+  text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.secondary-btn.recording { background: var(--danger); border-color: var(--danger); color: #fff; }
+.small-btn { min-height: 40px; padding: 6px 14px; font-size: 15px; }
+.text-btn { background: none; border: none; color: var(--ink-2); padding: 8px 0; min-height: 44px; text-decoration: underline; text-underline-offset: 3px; }
+.wide { width: 100%; }
+.input { width: 100%; border: 1.5px solid var(--control); border-radius: var(--r); padding: 12px 14px; background: var(--card); min-height: 52px; }
+.input:focus { border-color: var(--ink); outline: none; box-shadow: 0 0 0 3px var(--marigold); }
+textarea.input { resize: vertical; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.actions { margin: 20px 0; }
+
+/* ---------- home ---------- */
+.hero p { margin: 0 0 12px; }
+.chips { list-style: none; padding: 0; margin: 0 0 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+.chips li, .chip { background: var(--soft); border-radius: 999px; padding: 2px 12px; font-size: 15px; }
+.pick { display: grid; gap: 10px; margin: 8px 0; }
+.pick label { cursor: pointer; }
+.preview { margin: 12px 0; text-align: center; }
+.preview img { max-width: 100%; max-height: 320px; border-radius: var(--r); border: 1px solid var(--line); }
+.fields { display: grid; gap: 8px; margin: 12px 0 16px; }
+.privacy { margin-top: 12px; }
+.disclaimer { background: var(--soft); border-radius: var(--r); padding: 10px 14px; margin: 16px 0; color: var(--ink-2); }
+.disclaimer p { margin: 4px 0; }
+
+/* ---------- working ---------- */
+.working { text-align: center; padding: 24px 0; }
+.scan-photo { position: relative; display: inline-block; max-width: 100%; overflow: hidden; border-radius: var(--r); }
+.scan-photo img { display: block; max-width: 100%; max-height: 55vh; }
+.scanline { position: absolute; left: 0; right: 0; height: 18%; top: -18%;
+  background: linear-gradient(to bottom, transparent, rgba(214,176,138,.55), transparent); animation: scan 2.2s ease-in-out infinite; }
+@keyframes scan { to { top: 100%; } }
+@media (prefers-reduced-motion: reduce) { .scanline { animation: none; top: 40%; } }
+.step { font-weight: 700; margin-top: 16px; }
+
+/* ---------- result ---------- */
+.emergency { background: var(--danger-soft); border: 2px solid var(--danger); border-radius: var(--r-lg); padding: 14px 16px; margin: 16px 0; }
+.emergency h2 { color: var(--danger); }
+.emergency ul { margin: 10px 0 0; padding-left: 20px; }
+.call-btn { display: flex; align-items: center; justify-content: center; min-height: 60px; border-radius: var(--r); background: var(--danger);
+  color: #fff; font-weight: 700; font-size: 22px; text-decoration: none; }
+.photo { position: relative; margin: 16px 0; border-radius: var(--r); overflow: hidden; border: 1px solid var(--line); background: #000; }
+.photo img { display: block; width: 100%; }
+.region { position: absolute; border: 2px solid rgba(214,176,138,.9); border-radius: 6px; transition: box-shadow .2s, border-color .2s; }
+.region.kind-values { border-style: dashed; }
+.region.on { border: 3px solid var(--focus-region); box-shadow: 0 0 0 9999px rgba(0,0,0,.45); z-index: 2; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 14px 16px; margin: 14px 0; }
+.card-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.card p { margin: 6px 0; }
+.warn { color: var(--warn); font-weight: 700; }
+.ok-text { color: var(--ok); font-weight: 700; }
+.items { list-style: none; padding: 0; margin: 0; }
+.item { border-top: 1px solid var(--line); padding: 10px 0; }
+.item:first-child { border-top: none; }
+.item.is-abnormal { background: var(--warn-soft); margin: 0 -16px; padding: 10px 16px; }
+.item-head { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+.value { font-size: 20px; font-weight: 700; }
+.med-how { font-weight: 700; color: var(--ink-2); }
+.flag-high, .flag-low, .flag-abnormal { background: var(--warn); color: #fff; }
+.flag-normal { background: var(--ok-soft); color: var(--ok); }
+.chip.ok { background: var(--ok-soft); color: var(--ok); }
+.muted-chip { color: var(--muted); }
+.hospitals { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.hospital { display: grid; gap: 4px; border-top: 1px solid var(--line); padding-top: 10px; }
+.hospital:first-child { border-top: none; padding-top: 0; }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.ask-row { display: flex; gap: 8px; margin-bottom: 10px; }
+.ask-row .input { flex: 1; min-width: 0; }
+.answer { border-top: 1px solid var(--line); padding: 10px 0; }
+
+/* ---------- dialog and toast ---------- */
+.sheet { border: none; border-radius: var(--r-lg); padding: 20px; width: min(420px, calc(100% - 32px)); background: var(--card); color: var(--ink); }
+.sheet::backdrop { background: rgba(62,42,30,.45); }
+.sheet .primary-btn { margin: 10px 0; }
+.toast { position: fixed; left: 16px; right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); max-width: 560px; margin: 0 auto;
+  background: var(--ink); color: #fff; border-radius: var(--r); padding: 12px 16px; z-index: 10; }
